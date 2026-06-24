@@ -1,0 +1,62 @@
+{
+  "LightGBM_tuned": {
+    "MAE_log": 0.0537,
+    "RMSE_log": 0.1299,
+    "R2": 0.9724,
+    "MAPE_log": 0.7,
+    "MAE_raw": 231.0,
+    "RMSE_raw": 509.9
+  },
+  "LightGBM_default": {
+    "MAE_log": 0.0482,
+    "RMSE_log": 0.1056,
+    "R2": 0.9818,
+    "MAPE_log": 0.61,
+    "MAE_raw": 233.4,
+    "RMSE_raw": 671.9
+  },
+  "Ensemble": {
+    "MAE_log": 0.0537,
+    "RMSE_log": 0.1299,
+    "R2": 0.9724,
+    "MAPE_log": 0.7,
+    "MAE_raw": 231.0,
+    "RMSE_raw": 509.9
+  },
+  "XGBoost": {
+    "MAE_log": 0.0349,
+    "RMSE_log": 0.0736,
+    "R2": 0.9912,
+    "MAPE_log": 0.45,
+    "MAE_raw": 186.3,
+    "RMSE_raw": 442.2
+  },
+  "RandomForest": {
+    "MAE_log": 0.0399,
+    "RMSE_log": 0.1019,
+    "R2": 0.9831,
+    "MAPE_log": 0.5,
+    "MAE_raw": 217.1,
+    "RMSE_raw": 672.3
+  },
+  "GradientBoosting": {
+    "MAE_log": 0.029,
+    "RMSE_log": 0.0494,
+    "R2": 0.996,
+    "MAPE_log": 0.37,
+    "MAE_raw": 138.1,
+    "RMSE_raw": 278.2
+  },
+  "Ridge": {
+    "MAE_log": 0.3265,
+    "RMSE_log": 0.3965,
+    "R2": 0.7432,
+    "MAPE_log": 4.05,
+    "MAE_raw": 1696.4,
+    "RMSE_raw": 3403.3
+  },
+  "Prophet": {
+    "MAE_log": 0.3581,
+    "R2": -888419.0355
+  }
+}

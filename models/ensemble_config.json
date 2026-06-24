@@ -1,0 +1,773 @@
+{
+  "lgbm_model": "lgbm_tuned.txt",
+  "lgbm_weight": 0.7,
+  "prophet_weight": 0.3,
+  "prophet_regs": [
+    "avg_temperature_f",
+    "total_precip_in",
+    "is_bad_weather",
+    "tlc_trip_count",
+    "mta_ridership_total",
+    "ped_lag_1survey",
+    "loc_period_baseline"
+  ],
+  "prophet_coverage": [
+    {
+      "location_id": 35,
+      "period": "AM",
+      "model_file": "prophet/prophet_35_AM.json",
+      "mae_log": 0.2831,
+      "r2": -115.9128
+    },
+    {
+      "location_id": 35,
+      "period": "MD",
+      "model_file": "prophet/prophet_35_MD.json",
+      "mae_log": 0.4111,
+      "r2": -2.8011
+    },
+    {
+      "location_id": 35,
+      "period": "PM",
+      "model_file": "prophet/prophet_35_PM.json",
+      "mae_log": 0.4366,
+      "r2": -806.8418
+    },
+    {
+      "location_id": 36,
+      "period": "AM",
+      "model_file": "prophet/prophet_36_AM.json",
+      "mae_log": 0.3446,
+      "r2": -299.3039
+    },
+    {
+      "location_id": 36,
+      "period": "MD",
+      "model_file": "prophet/prophet_36_MD.json",
+      "mae_log": 0.3267,
+      "r2": -24.0313
+    },
+    {
+      "location_id": 36,
+      "period": "PM",
+      "model_file": "prophet/prophet_36_PM.json",
+      "mae_log": 0.3469,
+      "r2": -23.2358
+    },
+    {
+      "location_id": 37,
+      "period": "AM",
+      "model_file": "prophet/prophet_37_AM.json",
+      "mae_log": 0.2517,
+      "r2": -64.6928
+    },
+    {
+      "location_id": 37,
+      "period": "MD",
+      "model_file": "prophet/prophet_37_MD.json",
+      "mae_log": 0.2591,
+      "r2": -83.841
+    },
+    {
+      "location_id": 37,
+      "period": "PM",
+      "model_file": "prophet/prophet_37_PM.json",
+      "mae_log": 0.2531,
+      "r2": -79.9961
+    },
+    {
+      "location_id": 38,
+      "period": "AM",
+      "model_file": "prophet/prophet_38_AM.json",
+      "mae_log": 0.4379,
+      "r2": -482.2398
+    },
+    {
+      "location_id": 38,
+      "period": "MD",
+      "model_file": "prophet/prophet_38_MD.json",
+      "mae_log": 0.2516,
+      "r2": -21.6744
+    },
+    {
+      "location_id": 38,
+      "period": "PM",
+      "model_file": "prophet/prophet_38_PM.json",
+      "mae_log": 0.4544,
+      "r2": -66.756
+    },
+    {
+      "location_id": 39,
+      "period": "AM",
+      "model_file": "prophet/prophet_39_AM.json",
+      "mae_log": 0.0812,
+      "r2": -13.4539
+    },
+    {
+      "location_id": 39,
+      "period": "MD",
+      "model_file": "prophet/prophet_39_MD.json",
+      "mae_log": 0.5194,
+      "r2": -631.1725
+    },
+    {
+      "location_id": 39,
+      "period": "PM",
+      "model_file": "prophet/prophet_39_PM.json",
+      "mae_log": 0.1027,
+      "r2": -1.2704
+    },
+    {
+      "location_id": 40,
+      "period": "AM",
+      "model_file": "prophet/prophet_40_AM.json",
+      "mae_log": 0.2918,
+      "r2": -361.7756
+    },
+    {
+      "location_id": 40,
+      "period": "MD",
+      "model_file": "prophet/prophet_40_MD.json",
+      "mae_log": 0.086,
+      "r2": -7.189
+    },
+    {
+      "location_id": 40,
+      "period": "PM",
+      "model_file": "prophet/prophet_40_PM.json",
+      "mae_log": 0.1624,
+      "r2": -5.3531
+    },
+    {
+      "location_id": 41,
+      "period": "AM",
+      "model_file": "prophet/prophet_41_AM.json",
+      "mae_log": 0.0841,
+      "r2": -1.8694
+    },
+    {
+      "location_id": 41,
+      "period": "MD",
+      "model_file": "prophet/prophet_41_MD.json",
+      "mae_log": 0.3645,
+      "r2": -0.8826
+    },
+    {
+      "location_id": 41,
+      "period": "PM",
+      "model_file": "prophet/prophet_41_PM.json",
+      "mae_log": 0.1166,
+      "r2": -14.9481
+    },
+    {
+      "location_id": 42,
+      "period": "AM",
+      "model_file": "prophet/prophet_42_AM.json",
+      "mae_log": 0.5123,
+      "r2": -7.6069
+    },
+    {
+      "location_id": 42,
+      "period": "MD",
+      "model_file": "prophet/prophet_42_MD.json",
+      "mae_log": 0.3817,
+      "r2": -3.5119
+    },
+    {
+      "location_id": 42,
+      "period": "PM",
+      "model_file": "prophet/prophet_42_PM.json",
+      "mae_log": 0.5241,
+      "r2": -4.8308
+    },
+    {
+      "location_id": 43,
+      "period": "AM",
+      "model_file": "prophet/prophet_43_AM.json",
+      "mae_log": 0.4748,
+      "r2": -6.148
+    },
+    {
+      "location_id": 43,
+      "period": "MD",
+      "model_file": "prophet/prophet_43_MD.json",
+      "mae_log": 0.3552,
+      "r2": -0.8243
+    },
+    {
+      "location_id": 43,
+      "period": "PM",
+      "model_file": "prophet/prophet_43_PM.json",
+      "mae_log": 0.5637,
+      "r2": -2.8336
+    },
+    {
+      "location_id": 44,
+      "period": "AM",
+      "model_file": "prophet/prophet_44_AM.json",
+      "mae_log": 0.3191,
+      "r2": -5739.5288
+    },
+    {
+      "location_id": 44,
+      "period": "MD",
+      "model_file": "prophet/prophet_44_MD.json",
+      "mae_log": 0.278,
+      "r2": -106.1805
+    },
+    {
+      "location_id": 44,
+      "period": "PM",
+      "model_file": "prophet/prophet_44_PM.json",
+      "mae_log": 0.4253,
+      "r2": -32.1037
+    },
+    {
+      "location_id": 45,
+      "period": "AM",
+      "model_file": "prophet/prophet_45_AM.json",
+      "mae_log": 0.2567,
+      "r2": -295.2548
+    },
+    {
+      "location_id": 45,
+      "period": "MD",
+      "model_file": "prophet/prophet_45_MD.json",
+      "mae_log": 0.2475,
+      "r2": -10.4422
+    },
+    {
+      "location_id": 45,
+      "period": "PM",
+      "model_file": "prophet/prophet_45_PM.json",
+      "mae_log": 0.4007,
+      "r2": -314.4502
+    },
+    {
+      "location_id": 46,
+      "period": "AM",
+      "model_file": "prophet/prophet_46_AM.json",
+      "mae_log": 0.0974,
+      "r2": -80.7943
+    },
+    {
+      "location_id": 46,
+      "period": "MD",
+      "model_file": "prophet/prophet_46_MD.json",
+      "mae_log": 0.227,
+      "r2": -7.5915
+    },
+    {
+      "location_id": 46,
+      "period": "PM",
+      "model_file": "prophet/prophet_46_PM.json",
+      "mae_log": 0.1886,
+      "r2": -21.9789
+    },
+    {
+      "location_id": 47,
+      "period": "AM",
+      "model_file": "prophet/prophet_47_AM.json",
+      "mae_log": 0.1386,
+      "r2": -5.3646
+    },
+    {
+      "location_id": 47,
+      "period": "MD",
+      "model_file": "prophet/prophet_47_MD.json",
+      "mae_log": 0.0723,
+      "r2": 0.5823
+    },
+    {
+      "location_id": 47,
+      "period": "PM",
+      "model_file": "prophet/prophet_47_PM.json",
+      "mae_log": 0.1013,
+      "r2": 0.3814
+    },
+    {
+      "location_id": 48,
+      "period": "AM",
+      "model_file": "prophet/prophet_48_AM.json",
+      "mae_log": 0.1165,
+      "r2": 0.1692
+    },
+    {
+      "location_id": 48,
+      "period": "MD",
+      "model_file": "prophet/prophet_48_MD.json",
+      "mae_log": 0.2762,
+      "r2": -11.7734
+    },
+    {
+      "location_id": 48,
+      "period": "PM",
+      "model_file": "prophet/prophet_48_PM.json",
+      "mae_log": 0.2368,
+      "r2": -2.3275
+    },
+    {
+      "location_id": 49,
+      "period": "AM",
+      "model_file": "prophet/prophet_49_AM.json",
+      "mae_log": 0.2274,
+      "r2": -17.1226
+    },
+    {
+      "location_id": 49,
+      "period": "MD",
+      "model_file": "prophet/prophet_49_MD.json",
+      "mae_log": 0.1364,
+      "r2": -2.444
+    },
+    {
+      "location_id": 49,
+      "period": "PM",
+      "model_file": "prophet/prophet_49_PM.json",
+      "mae_log": 0.3479,
+      "r2": -143.9917
+    },
+    {
+      "location_id": 50,
+      "period": "AM",
+      "model_file": "prophet/prophet_50_AM.json",
+      "mae_log": 0.9523,
+      "r2": -409.8812
+    },
+    {
+      "location_id": 50,
+      "period": "MD",
+      "model_file": "prophet/prophet_50_MD.json",
+      "mae_log": 1.9961,
+      "r2": -74.4942
+    },
+    {
+      "location_id": 50,
+      "period": "PM",
+      "model_file": "prophet/prophet_50_PM.json",
+      "mae_log": 1.282,
+      "r2": -234.2906
+    },
+    {
+      "location_id": 51,
+      "period": "AM",
+      "model_file": "prophet/prophet_51_AM.json",
+      "mae_log": 0.3075,
+      "r2": -69.478
+    },
+    {
+      "location_id": 51,
+      "period": "MD",
+      "model_file": "prophet/prophet_51_MD.json",
+      "mae_log": 1.6117,
+      "r2": -64.9443
+    },
+    {
+      "location_id": 51,
+      "period": "PM",
+      "model_file": "prophet/prophet_51_PM.json",
+      "mae_log": 0.4798,
+      "r2": -8.2133
+    },
+    {
+      "location_id": 52,
+      "period": "AM",
+      "model_file": "prophet/prophet_52_AM.json",
+      "mae_log": 0.3032,
+      "r2": -2.3713
+    },
+    {
+      "location_id": 52,
+      "period": "MD",
+      "model_file": "prophet/prophet_52_MD.json",
+      "mae_log": 0.2643,
+      "r2": -12.6774
+    },
+    {
+      "location_id": 52,
+      "period": "PM",
+      "model_file": "prophet/prophet_52_PM.json",
+      "mae_log": 0.3546,
+      "r2": -2.3085
+    },
+    {
+      "location_id": 53,
+      "period": "AM",
+      "model_file": "prophet/prophet_53_AM.json",
+      "mae_log": 0.0897,
+      "r2": -0.5091
+    },
+    {
+      "location_id": 53,
+      "period": "MD",
+      "model_file": "prophet/prophet_53_MD.json",
+      "mae_log": 0.3919,
+      "r2": -156.7863
+    },
+    {
+      "location_id": 53,
+      "period": "PM",
+      "model_file": "prophet/prophet_53_PM.json",
+      "mae_log": 0.2428,
+      "r2": -0.5638
+    },
+    {
+      "location_id": 54,
+      "period": "AM",
+      "model_file": "prophet/prophet_54_AM.json",
+      "mae_log": 0.2274,
+      "r2": -14.9825
+    },
+    {
+      "location_id": 54,
+      "period": "MD",
+      "model_file": "prophet/prophet_54_MD.json",
+      "mae_log": 0.2316,
+      "r2": -898.2527
+    },
+    {
+      "location_id": 54,
+      "period": "PM",
+      "model_file": "prophet/prophet_54_PM.json",
+      "mae_log": 0.3005,
+      "r2": -6.6984
+    },
+    {
+      "location_id": 55,
+      "period": "AM",
+      "model_file": "prophet/prophet_55_AM.json",
+      "mae_log": 0.0978,
+      "r2": -0.3127
+    },
+    {
+      "location_id": 55,
+      "period": "MD",
+      "model_file": "prophet/prophet_55_MD.json",
+      "mae_log": 0.1148,
+      "r2": -17.4305
+    },
+    {
+      "location_id": 55,
+      "period": "PM",
+      "model_file": "prophet/prophet_55_PM.json",
+      "mae_log": 0.0707,
+      "r2": 0.8386
+    },
+    {
+      "location_id": 56,
+      "period": "AM",
+      "model_file": "prophet/prophet_56_AM.json",
+      "mae_log": 0.0783,
+      "r2": 0.494
+    },
+    {
+      "location_id": 56,
+      "period": "MD",
+      "model_file": "prophet/prophet_56_MD.json",
+      "mae_log": 0.1642,
+      "r2": -59.6693
+    },
+    {
+      "location_id": 56,
+      "period": "PM",
+      "model_file": "prophet/prophet_56_PM.json",
+      "mae_log": 0.2754,
+      "r2": -0.2861
+    },
+    {
+      "location_id": 57,
+      "period": "AM",
+      "model_file": "prophet/prophet_57_AM.json",
+      "mae_log": 0.2076,
+      "r2": -2.2284
+    },
+    {
+      "location_id": 57,
+      "period": "MD",
+      "model_file": "prophet/prophet_57_MD.json",
+      "mae_log": 0.2495,
+      "r2": -5.955
+    },
+    {
+      "location_id": 57,
+      "period": "PM",
+      "model_file": "prophet/prophet_57_PM.json",
+      "mae_log": 0.1717,
+      "r2": -1.6322
+    },
+    {
+      "location_id": 58,
+      "period": "AM",
+      "model_file": "prophet/prophet_58_AM.json",
+      "mae_log": 0.438,
+      "r2": -7.1526
+    },
+    {
+      "location_id": 58,
+      "period": "MD",
+      "model_file": "prophet/prophet_58_MD.json",
+      "mae_log": 0.2359,
+      "r2": -5.8057
+    },
+    {
+      "location_id": 58,
+      "period": "PM",
+      "model_file": "prophet/prophet_58_PM.json",
+      "mae_log": 0.1364,
+      "r2": -0.1131
+    },
+    {
+      "location_id": 59,
+      "period": "AM",
+      "model_file": "prophet/prophet_59_AM.json",
+      "mae_log": 1.8356,
+      "r2": -5708.3513
+    },
+    {
+      "location_id": 59,
+      "period": "MD",
+      "model_file": "prophet/prophet_59_MD.json",
+      "mae_log": 1.2569,
+      "r2": -16151168.4759
+    },
+    {
+      "location_id": 59,
+      "period": "PM",
+      "model_file": "prophet/prophet_59_PM.json",
+      "mae_log": 1.8087,
+      "r2": -79740658.5054
+    },
+    {
+      "location_id": 60,
+      "period": "AM",
+      "model_file": "prophet/prophet_60_AM.json",
+      "mae_log": 0.1823,
+      "r2": -5.5356
+    },
+    {
+      "location_id": 60,
+      "period": "MD",
+      "model_file": "prophet/prophet_60_MD.json",
+      "mae_log": 0.1007,
+      "r2": -2.9389
+    },
+    {
+      "location_id": 60,
+      "period": "PM",
+      "model_file": "prophet/prophet_60_PM.json",
+      "mae_log": 0.0451,
+      "r2": 0.8819
+    },
+    {
+      "location_id": 61,
+      "period": "AM",
+      "model_file": "prophet/prophet_61_AM.json",
+      "mae_log": 0.2027,
+      "r2": -54.0667
+    },
+    {
+      "location_id": 61,
+      "period": "MD",
+      "model_file": "prophet/prophet_61_MD.json",
+      "mae_log": 0.2573,
+      "r2": -12.9225
+    },
+    {
+      "location_id": 61,
+      "period": "PM",
+      "model_file": "prophet/prophet_61_PM.json",
+      "mae_log": 0.3364,
+      "r2": -40.5072
+    },
+    {
+      "location_id": 62,
+      "period": "AM",
+      "model_file": "prophet/prophet_62_AM.json",
+      "mae_log": 0.2035,
+      "r2": -2.8148
+    },
+    {
+      "location_id": 62,
+      "period": "MD",
+      "model_file": "prophet/prophet_62_MD.json",
+      "mae_log": 0.2499,
+      "r2": -23415.3505
+    },
+    {
+      "location_id": 62,
+      "period": "PM",
+      "model_file": "prophet/prophet_62_PM.json",
+      "mae_log": 0.64,
+      "r2": -33.257
+    },
+    {
+      "location_id": 63,
+      "period": "AM",
+      "model_file": "prophet/prophet_63_AM.json",
+      "mae_log": 0.3744,
+      "r2": -17.1887
+    },
+    {
+      "location_id": 63,
+      "period": "MD",
+      "model_file": "prophet/prophet_63_MD.json",
+      "mae_log": 0.3615,
+      "r2": -29.461
+    },
+    {
+      "location_id": 63,
+      "period": "PM",
+      "model_file": "prophet/prophet_63_PM.json",
+      "mae_log": 0.503,
+      "r2": -14.2134
+    },
+    {
+      "location_id": 64,
+      "period": "AM",
+      "model_file": "prophet/prophet_64_AM.json",
+      "mae_log": 0.3155,
+      "r2": -14966.8108
+    },
+    {
+      "location_id": 64,
+      "period": "MD",
+      "model_file": "prophet/prophet_64_MD.json",
+      "mae_log": 0.3574,
+      "r2": -30.0702
+    },
+    {
+      "location_id": 64,
+      "period": "PM",
+      "model_file": "prophet/prophet_64_PM.json",
+      "mae_log": 0.4337,
+      "r2": -100.7349
+    },
+    {
+      "location_id": 65,
+      "period": "AM",
+      "model_file": "prophet/prophet_65_AM.json",
+      "mae_log": 0.2045,
+      "r2": -20.5293
+    },
+    {
+      "location_id": 65,
+      "period": "MD",
+      "model_file": "prophet/prophet_65_MD.json",
+      "mae_log": 0.1966,
+      "r2": -3.3736
+    },
+    {
+      "location_id": 65,
+      "period": "PM",
+      "model_file": "prophet/prophet_65_PM.json",
+      "mae_log": 0.3948,
+      "r2": -5.6022
+    },
+    {
+      "location_id": 66,
+      "period": "AM",
+      "model_file": "prophet/prophet_66_AM.json",
+      "mae_log": 0.2988,
+      "r2": 0.5789
+    },
+    {
+      "location_id": 66,
+      "period": "MD",
+      "model_file": "prophet/prophet_66_MD.json",
+      "mae_log": 0.324,
+      "r2": -18.1214
+    },
+    {
+      "location_id": 66,
+      "period": "PM",
+      "model_file": "prophet/prophet_66_PM.json",
+      "mae_log": 0.228,
+      "r2": 0.1722
+    },
+    {
+      "location_id": 67,
+      "period": "AM",
+      "model_file": "prophet/prophet_67_AM.json",
+      "mae_log": 0.1811,
+      "r2": -4.234
+    },
+    {
+      "location_id": 67,
+      "period": "MD",
+      "model_file": "prophet/prophet_67_MD.json",
+      "mae_log": 0.1198,
+      "r2": 0.6818
+    },
+    {
+      "location_id": 67,
+      "period": "PM",
+      "model_file": "prophet/prophet_67_PM.json",
+      "mae_log": 0.4313,
+      "r2": -22.2404
+    },
+    {
+      "location_id": 68,
+      "period": "AM",
+      "model_file": "prophet/prophet_68_AM.json",
+      "mae_log": 0.3874,
+      "r2": -0.0152
+    },
+    {
+      "location_id": 68,
+      "period": "MD",
+      "model_file": "prophet/prophet_68_MD.json",
+      "mae_log": 0.3751,
+      "r2": -501.4779
+    },
+    {
+      "location_id": 68,
+      "period": "PM",
+      "model_file": "prophet/prophet_68_PM.json",
+      "mae_log": 0.175,
+      "r2": 0.6867
+    },
+    {
+      "location_id": 69,
+      "period": "AM",
+      "model_file": "prophet/prophet_69_AM.json",
+      "mae_log": 0.1174,
+      "r2": -15.7338
+    },
+    {
+      "location_id": 69,
+      "period": "MD",
+      "model_file": "prophet/prophet_69_MD.json",
+      "mae_log": 0.1978,
+      "r2": -7.5762
+    },
+    {
+      "location_id": 69,
+      "period": "PM",
+      "model_file": "prophet/prophet_69_PM.json",
+      "mae_log": 0.1896,
+      "r2": -173.0769
+    },
+    {
+      "location_id": 70,
+      "period": "AM",
+      "model_file": "prophet/prophet_70_AM.json",
+      "mae_log": 0.3757,
+      "r2": -0.5695
+    },
+    {
+      "location_id": 70,
+      "period": "MD",
+      "model_file": "prophet/prophet_70_MD.json",
+      "mae_log": 0.242,
+      "r2": -243.9716
+    },
+    {
+      "location_id": 70,
+      "period": "PM",
+      "model_file": "prophet/prophet_70_PM.json",
+      "mae_log": 0.7198,
+      "r2": -0.1965
+    }
+  ],
+  "fallback": "lgbm_only"
+}
