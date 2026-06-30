@@ -1,0 +1,12 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.git/
+.github/
+notebooks/
+reports/
+data/raw/
+data/plots/
+README.md
+api/API_DOCUMENTATION.md
