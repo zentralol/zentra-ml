@@ -1,4 +1,10 @@
-data/master
-data/processed
+data/master/zentra_train.csv
+data/master/zentra_val.csv
+data/processed/pedestrian_long_h3.csv
+data/processed/tlc_h3_all_dates.csv
+data/processed/mta_h3_all_dates.csv
+data/processed/citibike_h3_all_dates.csv
+data/processed/location_geocoded.csv
+data/processed/events_daily.csv
 data/raw
 
