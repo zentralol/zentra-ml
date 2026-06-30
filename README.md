@@ -179,22 +179,43 @@ Saved to `models/`:
 
 ## How to Run the API
 
-### Prerequisites
+### Prerequisites — Set up a virtual environment
+
+Run the project inside a virtual environment so dependencies stay isolated. Pick **one** of the options below, then install from `requirements.txt`.
+
+#### Option A — uv (recommended)
 
 ```bash
-pip install fastapi uvicorn lightgbm scikit-learn pandas numpy h3 astral holidays joblib requests
+# from the zentra-ml/ project root
+uv venv                        # creates .venv with the project's Python
+source .venv/bin/activate      # Windows: .venv\Scripts\activate
+uv pip install -r requirements.txt
 ```
 
-### Step 1 — Run the notebooks (first time only)
+#### Option B — conda
 
-Run both notebooks top-to-bottom in order:
+```bash
+conda create -n zentra python=3.11 -y
+conda activate zentra
+pip install -r requirements.txt
+```
+
+### Step 1 — Run the notebooks (optional, first time only)
+
+> **Optional.** The repo already ships the static files these notebooks produce — the
+> processed CSVs in `data/processed/` and `data/master/`, plus the trained models in
+> `models/`. The API runs directly off those, so you do **not** need to retrain on every
+> setup. Only run the notebooks if you want to regenerate the data or retrain the models
+> from scratch (e.g. after updating the raw data or refreshing the weather forecast).
+
+To regenerate, run both notebooks top-to-bottom in order:
 
 ```
 1. crowd_prediction_data_processing.ipynb
 2. crowd_prediction.ipynb
 ```
 
-This populates `data/processed/`, `data/master/`, and `models/`.
+This repopulates `data/processed/`, `data/master/`, and `models/`.
 
 ### Step 2 — Start the server
 
