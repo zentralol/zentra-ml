@@ -8,3 +8,20 @@ data/processed/location_geocoded.csv
 data/processed/events_daily.csv
 data/raw
 
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE / editor
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
