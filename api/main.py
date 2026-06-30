@@ -1,38 +1,31 @@
-# api/main.py
-# FastAPI app entry point. Run with:
-#   uvicorn api.main:app --reload --port 8000
-
-import logging
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
+import predict
+import inference
 
-from api.config import API_DESCRIPTION, API_TITLE, API_VERSION, CORS_ORIGINS
-from api.routers import health, model_info, predict, runs
-
-logging.basicConfig(level=logging.INFO, format="%(levelname)s  %(name)s  %(message)s")
-
-app = FastAPI(title=API_TITLE, version=API_VERSION, description=API_DESCRIPTION)
-
-# Allow the frontend to call this API from a browser
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=CORS_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+# Create the app
+app = FastAPI(
+    title="Zentra Crowd Prediction API",
+    description="Predict pedestrian crowd levels anywhere in Manhattan",
+    version="2.0"
 )
 
-# Register all routers
-app.include_router(health.router)
+# Connect all the routes from predict.py
 app.include_router(predict.router)
-app.include_router(model_info.router)
-app.include_router(runs.router)
 
-
-@app.get("/", tags=["health"])
-def root():
+# Root endpoint — health check + shows what data was loaded at startup
+@app.get("/")
+def home():
     return {
-        "name": API_TITLE,
-        "version": API_VERSION,
+        "message": "Zentra Crowd Prediction API is running!",
         "docs": "/docs",
+        "loaded": {
+            "trained_cells":   len(inference.TRAINED_CELLS),
+            "lag_baselines":   len(inference.LAG_BASELINE),
+            "proxy_cells":     len(inference.PROXY_SCORE),
+            "mean_train_proxy": round(inference.MEAN_TRAIN_PROXY, 1),
+            "feature_cols":    len(inference.FEATURE_COLS),
+        }
     }
+
+# Run with:  uvicorn main:app --reload --port 8000
+# API docs:  http://localhost:8000/docs
