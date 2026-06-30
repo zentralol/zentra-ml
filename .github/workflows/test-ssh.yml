@@ -1,0 +1,29 @@
+name: Test Bastion SSH Connection
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  test-connection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: SSH into Target VPS via Bastion Host
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          proxy_host: ${{ secrets.PROXY_HOST }}
+          proxy_username: ${{ secrets.PROXY_USERNAME }}
+          proxy_key: ${{ secrets.PROXY_SSH_KEY }}
+          script: |
+            echo "GitHub Actions connected to VPS via bastion host"
+            echo "Current user: $(whoami)"
+            echo "Hostname: $(hostname)"
+            echo "---"
+            echo "Testing Docker access..."
+            docker --version || echo "WARNING: docker command not available"
+            docker ps || echo "WARNING: cannot list docker containers"
