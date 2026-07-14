@@ -1,0 +1,5 @@
+# Test dependencies for zentra-ml
+-r requirements-fastapi.txt
+
+pytest==8.3.5
+httpx==0.27.2

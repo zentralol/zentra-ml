@@ -25,6 +25,8 @@ from astral import LocationInfo
 from astral.sun import sun as astral_sun
 from sklearn.ensemble import HistGradientBoostingRegressor, RandomForestRegressor
 
+from tzutil import now_in_manhattan, to_manhattan_time
+
 # Where are the model files? 
 MODELS = Path("../models")
 DATA   = Path("../data/master")
@@ -163,7 +165,7 @@ if weather_hist.exists():
         ["avg_temperature_f", "precip_mm", "avg_wind_kmh"]
     ].mean()
 
-US_HOLIDAYS = holidays.UnitedStates(years=range(2007, datetime.now().year + 3))
+US_HOLIDAYS = holidays.UnitedStates(years=range(2007, now_in_manhattan().year + 3))
 
 print(f"Ready — {len(FEATURE_COLS)} features, {len(grid_df)} grid cells.")
 
@@ -252,7 +254,8 @@ def get_weather(when: pd.Timestamp, period: str) -> dict:
             }
 
     # 2. Live forecast API (only for dates within 16 days)
-    days_out = (when.date() - date.today()).days
+    today_ny = now_in_manhattan().date()
+    days_out = (when.date() - today_ny).days
     if 0 <= days_out <= 16:
         try:
             resp = requests.get(
@@ -304,8 +307,9 @@ def build_features(lat: float, lon: float, when: datetime, zero_lags: bool = Fal
         cell   - the H3 cell the point snapped to
         period - time period (AM / PM / EVE etc.)
     """
-    when   = pd.Timestamp(when)
-    cell   = snap_to_grid(lat, lon)
+    when = to_manhattan_time(when)
+    when = pd.Timestamp(when)
+    cell = snap_to_grid(lat, lon)
     period = get_period(when.hour)
 
     row = {"h3_cell": cell, "lat": lat, "lon": lon, "period": period}
