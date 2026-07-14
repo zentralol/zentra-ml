@@ -12,6 +12,8 @@ The Zentra Crowd Prediction API predicts pedestrian crowd levels at any location
 
 **Coverage:** Manhattan only (lat 40.679–40.882, lon -74.020 to -73.907)
 
+**Timezone:** All datetimes are interpreted as **America/New_York** (Manhattan local time). ISO 8601 strings with timezone offsets (e.g. `2026-07-04T20:00:00-04:00`) are accepted and converted. Naive strings (e.g. `2026-07-04T20:00:00`) are assumed to already be in Manhattan local time.
+
 **Three prediction modes:**
 | Mode | Use case |
 |------|----------|
@@ -112,7 +114,7 @@ Predicts the crowd level at a location right now, or at a specific past/present 
 | `lon` | float | Echoed from request |
 | `h3_cell` | string | H3 resolution-9 grid cell ID (Uber H3 format) |
 | `period` | string | Time bucket (see Period Labels below) |
-| `timestamp` | string | ISO datetime the prediction was made for |
+| `timestamp` | string | ISO 8601 datetime in America/New_York (Manhattan local time) the prediction was made for |
 | `pedestrians` | float | Predicted pedestrian count |
 | `crowd_score` | float | 0–100 crowd intensity score |
 | `crowd_category` | string | Human label (see Crowd Categories below) |
@@ -311,6 +313,8 @@ api/
 ├── main.py        # FastAPI app setup + health check endpoint
 ├── inference.py   # Model loading + feature engineering + prediction logic
 ├── predict.py     # Route definitions (request/response models + endpoint handlers)
+├── tzutil.py      # Manhattan timezone helpers
+└── tests/         # pytest test suite
 ```
 
 ### main.py

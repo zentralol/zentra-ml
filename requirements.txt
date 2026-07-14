@@ -20,6 +20,9 @@ requests==2.32.5
 astral==3.2
 holidays==0.99
 
+# Timezone database for containers without system tzdata
+tzdata>=2024.1
+
 # Notebooks 
 optuna==4.9.0
 scipy==1.17.1

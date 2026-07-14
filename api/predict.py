@@ -15,6 +15,7 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field, field_validator
 
 import inference
+from tzutil import now_in_manhattan, to_manhattan_time
 
 router = APIRouter(prefix="/predict", tags=["Predictions"])
 
@@ -40,7 +41,8 @@ class FutureRequest(BaseModel):
     @field_validator("when")
     @classmethod
     def when_must_be_future(cls, v):
-        if v <= datetime.now():
+        v = to_manhattan_time(v)
+        if v <= now_in_manhattan():
             raise ValueError("'when' must be in the future. For current predictions use /predict/crowd.")
         return v
 
@@ -80,7 +82,7 @@ def predict_crowd(req: CrowdRequest):
 
     Uses a 3-model ensemble: GradientBoosting + LightGBM + RandomForest.
     """
-    when   = req.when or datetime.now()
+    when = to_manhattan_time(req.when) if req.when is not None else now_in_manhattan()
     result = inference.run(req.lat, req.lon, when, task="crowd")
 
     return CrowdResponse(
@@ -101,7 +103,7 @@ def get_crowd_score(
     Lightweight endpoint — returns just the 0-100 crowd score and category label.
     Good for dashboards and map badges where you only need the score.
     """
-    when   = when or datetime.now()
+    when = to_manhattan_time(when) if when is not None else now_in_manhattan()
     result = inference.run(lat, lon, when, task="score")
 
     return ScoreOnlyResponse(
@@ -125,7 +127,7 @@ def predict_future_crowd(req: FutureRequest):
     or seasonal averages if further out.
     """
     result    = inference.run(req.lat, req.lon, req.when, task="future")
-    days_out  = (req.when - datetime.now()).total_seconds() / 86400
+    days_out  = (req.when - now_in_manhattan()).total_seconds() / 86400
 
     return FutureResponse(
         lat=req.lat,
@@ -157,7 +159,7 @@ def debug_features(lat: float = Query(...), lon: float = Query(...)):
         return obj
 
     try:
-        when = datetime.now()
+        when = now_in_manhattan()
         raw_row, cell, period = inference.build_features(lat, lon, when)
         feature_df = inference.align_to_feature_cols(raw_row)
 
