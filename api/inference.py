@@ -25,6 +25,7 @@ from astral import LocationInfo
 from astral.sun import sun as astral_sun
 from sklearn.ensemble import HistGradientBoostingRegressor, RandomForestRegressor
 
+from model_input import transform_preserving_columns
 from tzutil import now_in_manhattan, to_manhattan_time
 
 # Where are the model files? 
@@ -405,7 +406,8 @@ def predict_crowd(df: pd.DataFrame) -> float:
     w     = WEIGHTS["crowd"]
     lgb_p = float(lgb_model.predict(df)[0])
     gb_p  = float(gb_model.predict(df)[0])                           # handles NaN natively
-    rf_p  = float(rf_model.predict(rf_imputer.transform(df))[0])     # needs imputed input
+    rf_df = transform_preserving_columns(rf_imputer, df)
+    rf_p  = float(rf_model.predict(rf_df)[0])
     return w["lgb"] * lgb_p + w["gb"] * gb_p + w["rf"] * rf_p
 
 
